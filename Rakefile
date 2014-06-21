@@ -13,15 +13,13 @@ require 'rake'
 
 require 'jeweler'
 Jeweler::Tasks.new do |gem|
-  # gem is a Gem::Specification... see http://guides.rubygems.org/specification-reference/ for more options
-  gem.name = "splunky"
-  gem.homepage = "http://github.com/techthumb/splunky"
-  gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
-  gem.email = "kunal@techthumb.in"
-  gem.authors = ["Kunal Parikh"]
-  # dependencies defined in Gemfile
+  gem.name        = "splunky"
+  gem.homepage    = "http://github.com/techthumb/splunky"
+  gem.license     = "MIT"
+  gem.summary     = %Q{A splunk friendly log formatter}
+  gem.description = %Q{Generates log lines with request_id=xxx for easy splunking!}
+  gem.email       = "kunal@techthumb.in"
+  gem.authors     = ["Kunal Parikh"]
 end
 Jeweler::RubygemsDotOrgTasks.new
 
@@ -31,20 +29,4 @@ RSpec::Core::RakeTask.new(:spec) do |spec|
   spec.pattern = FileList['spec/**/*_spec.rb']
 end
 
-desc "Code coverage detail"
-task :simplecov do
-  ENV['COVERAGE'] = "true"
-  Rake::Task['spec'].execute
-end
-
 task :default => :spec
-
-require 'rdoc/task'
-Rake::RDocTask.new do |rdoc|
-  version = File.exist?('VERSION') ? File.read('VERSION') : ""
-
-  rdoc.rdoc_dir = 'rdoc'
-  rdoc.title = "splunky #{version}"
-  rdoc.rdoc_files.include('README*')
-  rdoc.rdoc_files.include('lib/**/*.rb')
-end
