@@ -21,6 +21,7 @@ Gem::Specification.new do |s|
   s.files = [
     ".document",
     ".rspec",
+    ".travis.yml",
     "Gemfile",
     "Gemfile.lock",
     "LICENSE.txt",
@@ -32,7 +33,8 @@ Gem::Specification.new do |s|
     "lib/splunky/initializer.rb",
     "lib/splunky/railtie.rb",
     "spec/formatter_spec.rb",
-    "spec/spec_helper.rb"
+    "spec/spec_helper.rb",
+    "splunky.gemspec"
   ]
   s.homepage = "http://github.com/techthumb/splunky"
   s.licenses = ["MIT"]
